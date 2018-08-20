@@ -1,11 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routes from './js/routes';
 
-/*
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
-*/
-
-ReactDOM.render(<h1>Alphacl</h1>, document.getElementById('root'));
-//registerServiceWorker();
+ReactDOM.render(<Routes />, document.getElementById('root'));
