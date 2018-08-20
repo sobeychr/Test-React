@@ -4,5 +4,14 @@ html, body {
 }
 
 .nav {
-    background: #131313;
+    background: #333;
+
+    a {
+        color: #FFF;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
