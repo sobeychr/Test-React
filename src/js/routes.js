@@ -1,19 +1,17 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navigation from './navigation';
 
-const Home = () => <h1>Home</h1>;
+import Index from './pages/index';
 
 const Test = () => <h2>Test</h2>;
 
 const Routes = () => (
   <Router>
     <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/test">Test</Link>
-      </nav>
+      <Navigation />
 
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Index} />
       <Route path="/test" component={Test} />
     </div>
   </Router>
