@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './../scss/navigation.scss';
+import './../scss/header.scss';
 
-const Navigation = () => (
+const Header = () => (
   <nav className="nav">
     <Link to="/">Home</Link>
     <Link to="/css">Css Sort</Link>
@@ -15,4 +15,4 @@ const Navigation = () => (
   </nav>
 );
 
-export default Navigation;
+export default Header;
