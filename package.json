@@ -57,8 +57,13 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
+    "src/**/*.{js,jsx,json}": [
+      "eslint",
+      "prettier --print-width 80 --tab-width 4 --single-quote",
+      "git add"
+    ],
+    "src/**/*.{scss}": [
+      "stylelint",
       "git add"
     ]
   },
@@ -67,7 +72,8 @@
     "grunt-contrib-copy": "^1.0.0",
     "node-sass": "^4.9.3",
     "react-icons": "^3.0.5",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "stylelint": "^9.5.0"
   },
   "jest": {
     "collectCoverageFrom": [
