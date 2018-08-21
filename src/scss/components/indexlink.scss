@@ -1,0 +1,23 @@
+@import '../variables';
+
+.index_link {
+    display: block;
+    width: 18%;
+    padding: 5px;
+    text-align: center;
+    min-width: 100px;
+    min-height: 100px;
+    max-height: 200px;
+    margin-bottom: 2%;
+    float: left;
+    border: 1px solid $colorLink;
+
+    &:hover {
+        border-color: $colorLinkHover;
+        box-shadow: 0 0 5px $colorLinkHover;
+    }
+
+    &:nth-child(n + 2) {
+        margin-left: 2%;
+    }
+}

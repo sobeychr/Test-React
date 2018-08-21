@@ -1,21 +1,29 @@
-html, body {
-    background: #131313;
-    color: #DDD;
+@import 'variables';
+
+html,
+body {
+    background: $colorBg0;
+    color: $colorText0;
     font: normal 12px/1 Arial, sans-serif;
 }
 
 a {
-    color: #27a590;
+    color: $colorLink;
     text-decoration: none;
 
     &:hover {
-        color: #2EFFE6;
+        color: $colorLinkHover;
         text-decoration: underline;
     }
 }
 
-body, h1, h2, h3, h4, p, pre
-{
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+pre {
     margin: 0;
     padding: 0;
 }
