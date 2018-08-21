@@ -1,3 +1,13 @@
-.nav {
-    background: #333;
+.header {
+    padding: 10px 5px;
+    border-bottom: 1px solid #CCC;
+    box-shadow: 0 1px 5px #CCC;
+
+    &__home {
+        margin: 0 10px;
+    }
+
+    &__title {
+        font-size: 24px;
+    }
 }

@@ -1,18 +1,17 @@
 import React from 'react';
+import { IoIosHome } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import './../scss/header.scss';
 
-const Header = () => (
-  <nav className="nav">
-    <Link to="/">Home</Link>
-    <Link to="/css">Css Sort</Link>
-    <Link to="/encrypter">Encrypter</Link>
-    <Link to="/host">Hosts</Link>
-    <Link to="/html">HTML Tag Indent</Link>
-    <Link to="/invalidation">Invalidation</Link>
-    <Link to="/timestamp">Timestamp</Link>
-    <Link to="/url">URL Parser</Link>
-  </nav>
+const Header = ({ pageName }) => (
+  <header className="header">
+    <h1 className="header__title">
+      <Link className="header__home" to="/">
+        <IoIosHome />
+      </Link>
+      {pageName}
+    </h1>
+  </header>
 );
 
 export default Header;

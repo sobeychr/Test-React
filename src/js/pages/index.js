@@ -3,8 +3,7 @@ import Header from './../header';
 
 const Index = () => (
   <div>
-    <Header />
-    <h1>Index</h1>
+    <Header pageName="Index" />
   </div>
 );
 
