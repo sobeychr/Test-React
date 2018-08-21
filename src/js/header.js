@@ -6,9 +6,15 @@ import './../scss/header.scss';
 const Header = ({ pageName }) => (
   <header className="header">
     <h1 className="header__title">
-      <Link className="header__home" to="/">
-        <IoIosHome />
-      </Link>
+      {pageName !== 'Index' ? (
+        <Link className="header__home" to="/">
+          <IoIosHome />
+        </Link>
+      ) : (
+        <span className="header__home">
+          <IoIosHome />
+        </span>
+      )}
       {pageName}
     </h1>
   </header>

@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './../header';
 
-class Index extends React.Component {
+class Test extends React.Component {
   render() {
     return (
       <div>
-        <Header pageName="Index" />
+        <Header pageName="Test" />
       </div>
     );
   }
 }
 
-export default Index;
+export default Test;
