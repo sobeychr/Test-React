@@ -66,9 +66,6 @@
             "git add"
         ]
     },
-    "stylelint": {
-        "syntax": "scss"
-    },
     "devDependencies": {
         "grunt": "^1.0.3",
         "grunt-contrib-copy": "^1.0.0",
