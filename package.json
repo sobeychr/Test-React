@@ -65,7 +65,7 @@
             "prettier --print-width 80 --tab-width 4 --single-quote --write",
             "git add"
         ],
-        "src/**/*.{scss}": [
+        "src/**/*.scss": [
             "stylelint",
             "git add"
         ]
