@@ -17,11 +17,11 @@ class Index extends React.Component {
             <div>
                 <Header pageName="Index" />
 
-                <nav className="nav">
+                <main className="main">
                     {this.state.links.map((entry, i) => (
                         <IndexLink key={i} name={entry} />
                     ))}
-                </nav>
+                </main>
             </div>
         );
     }

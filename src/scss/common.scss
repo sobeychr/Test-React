@@ -27,3 +27,43 @@ pre {
     margin: 0;
     padding: 0;
 }
+
+input[type='submit'],
+input[type='text'],
+textarea {
+    background: $colorBg1;
+    border: 1px solid $colorText2;
+    color: $colorText1;
+    padding: 5px;
+
+    &:focus {
+        color: $colorLinkHover;
+        border-color: $colorLink;
+        outline-color: $colorLink;
+    }
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &::-ms-input-placeholder,
+    &::-moz-placeholder {
+        color: $colorText2;
+        font-style: italic;
+    }
+}
+
+pre {
+    background: $colorBg1;
+    border: none;
+    border-left: 4px solid $colorBorder1;
+    border-right: 2px solid $colorBorder1;
+    color: $colorText1;
+    font-family: 'Courier New', sans-serif;
+    padding: 3px 4px;
+}
+
+.main {
+    margin: 50px auto 0;
+    width: calc(100% - 10px);
+    min-width: 200px;
+    max-width: $widthMax;
+}
