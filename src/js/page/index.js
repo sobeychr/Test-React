@@ -8,7 +8,7 @@ class Index extends React.Component {
         super(props);
 
         this.state = {
-            links: ['css', 'html']
+            links: ['css', 'html', 'timestamp']
         };
     }
 
