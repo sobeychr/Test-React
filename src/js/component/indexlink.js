@@ -5,7 +5,7 @@ import '../../scss/component/indexlink.scss';
 const IndexLink = ({ name }) => (
     <Link to={'/' + name} className="index_link">
         <img
-            src={'img/icon/' + name + '.png'}
+            src={'img/indexlink/' + name + '.png'}
             alt={name}
             className="index_link__img"
         />
