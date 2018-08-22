@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Index from './pages/index';
-import Css from './pages/css';
-import Html from './pages/html';
+import Index from './page/index';
+import Css from './page/css';
+import Html from './page/html';
 
 const Routes = () => (
     <Router>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './../../scss/components/indexlink.scss';
+import '../../scss/component/indexlink.scss';
 
 const IndexLink = ({ name }) => (
     <Link to={'/' + name} className="index_link">

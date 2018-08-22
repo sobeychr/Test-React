@@ -1,14 +1,18 @@
-@import './../variables';
+@import './../variable';
 
 .input,
 .output {
-    width: 100%;
     min-width: 100px;
     max-width: $widthMax;
     height: 250px;
     min-height: 50px;
 }
 
+.input {
+    width: calc(100% - 15px);
+}
+
 .output {
     margin-top: 20px;
+    width: calc(100% - 20px);
 }

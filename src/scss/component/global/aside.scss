@@ -1,0 +1,13 @@
+@import '../../variable';
+
+.aside {
+    background: $colorBg0;
+    box-shadow: 0 0 5px $colorBorder0;
+    border: 1px solid $colorBorder0;
+    position: absolute;
+    top: 49px;
+    left: -1px;
+    padding: 5px;
+    width: 250px;
+    height: 500px;
+}

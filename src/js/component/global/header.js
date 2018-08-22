@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoIosHome } from 'react-icons/io';
 import { Link } from 'react-router-dom';
-import './../scss/header.scss';
+import './../../../scss/component/global/header.scss';
 
 const Header = ({ pageName }) => (
     <header className="header">

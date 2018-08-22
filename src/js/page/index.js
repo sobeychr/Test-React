@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './../header';
-import IndexLink from '../components/indexlink';
-import './../../scss/pages/index.scss';
+import Header from './../component/global/header';
+import IndexLink from '../component/indexlink';
+import '../../scss/page/index.scss';
 
 class Index extends React.Component {
     constructor(props) {

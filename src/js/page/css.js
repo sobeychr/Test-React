@@ -1,14 +1,22 @@
 import React from 'react';
-import Header from './../header';
-import sortCss from './../scripts/css';
-import './../../scss/pages/css.scss';
+import Header from './../component/global/header';
+import Instruction from './../component/instruction';
+import sortCss from '../script/css';
+import '../../scss/page/css.scss';
 
 class Css extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { text: '' };
         this.handleChange = this.handleChange.bind(this);
+
+        this.state = {
+            instruction: [
+                'Enter CSS/SCSS/SASS into the <textarea />',
+                'The <pre /> will update with the new sorting'
+            ],
+            text: ''
+        };
     }
 
     handleChange(event) {
@@ -20,6 +28,7 @@ class Css extends React.Component {
         return (
             <div>
                 <Header pageName="Css" />
+                <Instruction instruction={this.state.instruction} />
 
                 <main className="main">
                     <textarea

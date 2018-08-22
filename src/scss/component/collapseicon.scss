@@ -1,0 +1,11 @@
+.collapse_icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #f00;
+    color: transparent;
+}
+
+*:hover > .collapse_icon {
+    background: #0f0;
+}

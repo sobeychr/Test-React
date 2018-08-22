@@ -1,0 +1,8 @@
+@import '../../variable';
+
+.main {
+    margin: 50px auto 0;
+    width: calc(100% - 10px);
+    min-width: 200px;
+    max-width: $widthMax;
+}
