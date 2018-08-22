@@ -1,14 +1,16 @@
 import React from 'react';
 import '../../scss/component/youtubelink.scss';
 
-const YoutubeLink = ({ name }) => (
-    <Link to={'/' + name} className="index_link">
+const YoutubeLink = ({ band, name, video }) => (
+    <div className="youtube_link">
+        <span className="youtube_link__band">{band}</span>
+        <span className="youtube_link__name">{name}</span>
         <img
-            src={'img/icon/' + name + '.png'}
-            alt={name}
-            className="index_link__img"
+            src={'https://img.youtube.com/vi/' + video + '/0.jpg'}
+            alt={band + ' - ' + name}
+            className="youtube_link__img"
         />
-    </Link>
+    </div>
 );
 
 export default YoutubeLink;

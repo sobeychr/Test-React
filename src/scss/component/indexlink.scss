@@ -6,14 +6,15 @@
     padding: 5px;
     text-align: center;
     min-width: 100px;
-    min-height: 100px;
-    max-height: 200px;
+    height: 200px;
     margin-bottom: 2%;
     float: left;
     border: 1px solid $colorLink;
 
     &__img {
-        height: 200px;
+        display: block;
+        height: 100%;
+        margin: 0 auto;
     }
 
     &:hover {

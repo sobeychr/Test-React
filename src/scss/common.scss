@@ -68,3 +68,12 @@ pre {
     padding: 5px;
     margin: 5px 0;
 }
+
+.clearfix {
+    &:after,
+    &:before {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
