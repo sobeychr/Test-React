@@ -6,9 +6,18 @@
             margin-right: 5px;
         }
     }
+
     .section {
         &--close {
             display: none;
+        }
+    }
+
+    @media (max-width: 1550px) {
+        &:not(:hover) {
+            .section {
+                display: none;
+            }
         }
     }
 

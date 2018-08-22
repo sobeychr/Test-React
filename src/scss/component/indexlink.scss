@@ -12,6 +12,10 @@
     float: left;
     border: 1px solid $colorLink;
 
+    &__img {
+        height: 200px;
+    }
+
     &:hover {
         border-color: $colorLinkHover;
         box-shadow: 0 0 5px $colorLinkHover;
