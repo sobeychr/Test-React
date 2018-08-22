@@ -8,164 +8,22 @@ class Youtube extends React.Component {
         super(props);
 
         this.state = {
-            videos: [
-                {
-                    band: 'Viking',
-                    name: 'Dagr',
-                    video: 'FsSd-1AE4QY'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                },
-                {
-                    band: 'Viking',
-                    name: 'Helvegen',
-                    video: 'DD65K4VR6Lw'
-                }
-            ]
+            isLoading: false,
+            videos: []
         };
+    }
+
+    componentDidMount() {
+        this.setState({ isLoading: true });
+
+        fetch('./json/youtube.json')
+            .then(response => {
+                return response.json();
+            })
+            .then(json => {
+                this.setState({ videos: json });
+                this.setState({ isLoading: false });
+            });
     }
 
     render() {

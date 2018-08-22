@@ -9,7 +9,12 @@ module.exports = grunt => {
                 {
                     expand: true,
                     cwd: './src/',
-                    src: ['index.html', 'manifest.json', 'img/**/*'],
+                    src: [
+                        'index.html',
+                        'img/**/*',
+                        'json/**/*.txt',
+                        'manifest.json'
+                    ],
                     dest: './public/'
                 }
             ]
