@@ -14,10 +14,6 @@ import '../../scss/component/collapseicon.scss';
 class CollapseIcon extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            direction: 'up'
-        };
     }
 
     collapseDown() {
@@ -41,8 +37,8 @@ class CollapseIcon extends React.Component {
     render() {
         let icon = this.collapseUp();
 
-        if (this.state.direction === 'down') {
-            icon = this.collapseDown();
+        if (this.props.direction === 'down') {
+            icon = this.props.open ? this.collapseDown() : this.collapseUp();
         }
 
         return <span className="collapse_icon">{icon}</span>;

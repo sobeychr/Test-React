@@ -1,5 +1,3 @@
-'use strict';
-
 // ================================================================
 // Function sorting the content
 const sortCss = text => {

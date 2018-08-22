@@ -1,0 +1,9 @@
+.instruction {
+    transition: height 0.2s linear;
+
+    .section {
+        &--close {
+            display: none;
+        }
+    }
+}
