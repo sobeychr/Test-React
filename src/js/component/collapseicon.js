@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {
     IoIosArrowDropdownCircle,
     IoIosArrowDropdown,
@@ -12,24 +11,42 @@ import {
 } from 'react-icons/io';
 import '../../scss/component/collapseicon.scss';
 
-/*
-{(upDown) ?
-    <i>
-        <IoIosArrowDropdownCircle className="open out"/>
-        <IoIosArrowDropdown className="open hover"/>
-        <IoIosArrowDropupCircle className="close out"/>
-        <IoIosArrowDropup className="close hover"/>
-    </i>
-    :
-    <i>
-        <IoIosArrowDropdownCircle className="open out"/>
-        <IoIosArrowDropdown className="open hover"/>
-        <IoIosArrowDropupCircle className="close out"/>
-        <IoIosArrowDropup className="close hover"/>
-    </i>
-}
-*/
+class CollapseIcon extends React.Component {
+    constructor(props) {
+        super(props);
 
-const CollapseIcon = () => <span className="collapse_icon">test</span>;
+        this.state = {
+            direction: 'up'
+        };
+    }
+
+    collapseDown() {
+        return (
+            <i>
+                <IoIosArrowDropup className="out" />
+                <IoIosArrowDropupCircle className="hover" />
+            </i>
+        );
+    }
+
+    collapseUp() {
+        return (
+            <i>
+                <IoIosArrowDropdown className="out" />
+                <IoIosArrowDropdownCircle className="hover" />
+            </i>
+        );
+    }
+
+    render() {
+        let icon = this.collapseUp();
+
+        if (this.state.direction === 'down') {
+            icon = this.collapseDown();
+        }
+
+        return <span className="collapse_icon">{icon}</span>;
+    }
+}
 
 export default CollapseIcon;

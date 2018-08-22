@@ -1,11 +1,19 @@
-.collapse_icon {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #f00;
-    color: transparent;
-}
+.collapse__parent {
+    cursor: pointer;
 
-*:hover > .collapse_icon {
-    background: #0f0;
+    &:not(:hover) {
+        .collapse_icon {
+            .hover {
+                display: none;
+            }
+        }
+    }
+
+    &:hover {
+        .collapse_icon {
+            .out {
+                display: none;
+            }
+        }
+    }
 }
