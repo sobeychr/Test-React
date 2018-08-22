@@ -11,6 +11,11 @@
     width: 275px;
 
     &__title {
+        color: $colorTitle;
         margin: 0 0 10px 0;
+
+        &:hover {
+            color: $colorTitleHover;
+        }
     }
 }

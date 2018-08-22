@@ -1,6 +1,9 @@
 .instruction {
-    transition: height 0.2s linear;
-
+    .aside__title {
+        .collapse_icon {
+            margin-right: 5px;
+        }
+    }
     .section {
         &--close {
             display: none;
