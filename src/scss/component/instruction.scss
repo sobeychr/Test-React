@@ -1,3 +1,5 @@
+@import '../variable';
+
 .instruction {
     .aside__title {
         .collapse_icon {
@@ -7,6 +9,22 @@
     .section {
         &--close {
             display: none;
+        }
+    }
+
+    &__list {
+        padding-left: 20px;
+
+        &__entry {
+            padding: 3px 0;
+
+            &:nth-child(n + 2) {
+                margin-top: 2px;
+            }
+
+            &:hover {
+                background: $colorBg1;
+            }
         }
     }
 }

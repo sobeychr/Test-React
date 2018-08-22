@@ -34,11 +34,14 @@ class Instruction extends React.Component {
                     Instructions
                 </h2>
                 <section className={classDisplay}>
-                    <ol className="instruction">
+                    <ol className="instruction__list">
                         {this.props.instruction.map((entry, i) => (
-                            <li key={i}>{entry}</li>
+                            <li key={i} className="instruction__list__entry">
+                                {entry}
+                            </li>
                         ))}
                     </ol>
+                    {this.props.text}
                 </section>
             </aside>
         );

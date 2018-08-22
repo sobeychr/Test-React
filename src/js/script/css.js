@@ -30,8 +30,6 @@ const sortCss = text => {
     return compile.join('\n');
 };
 
-export default sortCss;
-
 // ================================================================
 // Class managing a single CSS attribute
 class CCssSort {
@@ -63,6 +61,7 @@ class CCssSort {
         }
     }
 
+    // Returns the final string
     toString() {
         return this.originalstring;
     }
@@ -79,15 +78,15 @@ class CCssSort {
         */
 
         // An element is a space - skip sorting
-        if (a.lineCut === '') {
+        if (a.linecut === '') {
             return 1;
-        } else if (b.lineCut === '') {
+        } else if (b.linecut === '') {
             return -1;
         }
 
         // Both elements not in the sorting array - alphabetical order
         else if (indexa === -1 && indexb === -1) {
-            return a.lineCut.localeCompare(b.lineCut);
+            return a.linecut.localeCompare(b.linecut);
         }
 
         // First element is not in the sorting array - second element is before
@@ -106,38 +105,41 @@ class CCssSort {
 
         return indexa > indexb ? 1 : -1;
     }
+
+    // Sorting order
+    static order = [
+        'display',
+        'flex-wrap',
+        'flex-direction',
+        'flex',
+        'order',
+        'justify-content',
+        'position',
+        'z-index',
+        'top',
+        'bottom',
+        'left',
+        'right',
+        'float',
+        'width',
+        'max-width',
+        'min-width',
+        'height',
+        'max-height',
+        'min-height',
+        'margin',
+        'padding',
+        'border',
+        'background',
+        'font',
+        'color',
+        'text-transform',
+        'text-decoration',
+        'cursor',
+        'content'
+    ];
 }
 
 // ================================================================
-// Sorting order
-CCssSort.order = [
-    'display',
-    'flex-wrap',
-    'flex-direction',
-    'flex',
-    'order',
-    'justify-content',
-    'position',
-    'z-index',
-    'top',
-    'bottom',
-    'left',
-    'right',
-    'float',
-    'width',
-    'max-width',
-    'min-width',
-    'height',
-    'max-height',
-    'min-height',
-    'margin',
-    'padding',
-    'border',
-    'background',
-    'font',
-    'color',
-    'text-transform',
-    'text-decoration',
-    'cursor',
-    'content'
-];
+// Exports
+export { CCssSort, sortCss };

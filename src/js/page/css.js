@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './../component/global/header';
 import Instruction from './../component/instruction';
-import sortCss from '../script/css';
+import { CCssSort, sortCss } from '../script/css';
 import '../../scss/page/css.scss';
 
 class Css extends React.Component {
@@ -10,12 +10,27 @@ class Css extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
 
+        let text = (
+            <div className="instruction__sort">
+                <span className="instruction__sort__title">
+                    Here is the sort order:
+                </span>
+                <ol className="instruction__sort__list">
+                    {CCssSort.order.map((entry, i) => (
+                        <li key={i} className="instruction__sort__list__entry">
+                            {entry}
+                        </li>
+                    ))}
+                </ol>
+            </div>
+        );
+
         this.state = {
             instruction: [
                 'Enter CSS/SCSS/SASS into the <textarea />',
                 'The <pre /> will update with the new sorting'
             ],
-            text: ''
+            text: text
         };
     }
 
@@ -28,7 +43,10 @@ class Css extends React.Component {
         return (
             <div>
                 <Header pageName="Css" />
-                <Instruction instruction={this.state.instruction} />
+                <Instruction
+                    instruction={this.state.instruction}
+                    text={this.state.text}
+                />
 
                 <main className="main">
                     <textarea
@@ -36,7 +54,7 @@ class Css extends React.Component {
                         className="input"
                         onChange={this.handleChange}
                     />
-                    <pre className="output">{this.state.text}</pre>
+                    <pre className="output" />
                 </main>
             </div>
         );
