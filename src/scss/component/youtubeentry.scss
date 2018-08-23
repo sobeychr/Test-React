@@ -1,7 +1,14 @@
 @import '../variable';
 
 .youtube_entry {
+    padding: 2px 0;
+
     .icon {
+        color: $colorRed1;
         margin-right: $marginIcon;
+    }
+
+    &:nth-child(n + 2) {
+        margin-top: 5px;
     }
 }

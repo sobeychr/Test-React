@@ -5,8 +5,8 @@ import '../../scss/component/youtubeentry.scss';
 const YoutubeEntry = ({ band, name, video }) => (
     <li className="youtube_entry">
         <i className="icon">
-            <IoIosCloseCircle className="out" />
-            <IoIosCloseCircleOutline className="hover" />
+            <IoIosCloseCircleOutline className="out" />
+            <IoIosCloseCircle className="hover" />
         </i>
 
         {band + ' ' + name + ' ' + video}

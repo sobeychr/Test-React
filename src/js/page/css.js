@@ -10,7 +10,7 @@ class Css extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
 
-        let text = (
+        let cssOrder = (
             <div className="instruction__sort">
                 <span className="instruction__sort__title">
                     Here is the sort order:
@@ -30,7 +30,8 @@ class Css extends React.Component {
                 'Enter CSS/SCSS/SASS into the <textarea />',
                 'The <pre /> will update with the new sorting'
             ],
-            text: text
+            cssOrder: cssOrder,
+            text: ''
         };
     }
 
@@ -45,7 +46,7 @@ class Css extends React.Component {
                 <Header pageName="Css" />
                 <Instruction
                     instruction={this.state.instruction}
-                    text={this.state.text}
+                    text={this.state.cssOrder}
                 />
 
                 <main className="main">
@@ -54,7 +55,7 @@ class Css extends React.Component {
                         className="input"
                         onChange={this.handleChange}
                     />
-                    <pre className="output" />
+                    <pre className="output">{this.state.text}</pre>
                 </main>
             </div>
         );

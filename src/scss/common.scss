@@ -3,7 +3,7 @@
 html,
 body {
     background: $colorBg0;
-    color: $colorText0;
+    color: $colorText1;
     font: normal 14px/1 Arial, sans-serif;
 }
 
@@ -40,7 +40,7 @@ input[type='text'],
 textarea {
     background: $colorBg1;
     border: 1px solid $colorText2;
-    color: $colorText1;
+    color: $colorText0;
     padding: 5px;
 
     &:focus {
