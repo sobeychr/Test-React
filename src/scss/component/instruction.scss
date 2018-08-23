@@ -7,20 +7,6 @@
         }
     }
 
-    .section {
-        &--close {
-            display: none;
-        }
-    }
-
-    @media (max-width: 1550px) {
-        &:not(:hover) {
-            .section {
-                display: none;
-            }
-        }
-    }
-
     &__list {
         padding-left: 20px;
 

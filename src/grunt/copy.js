@@ -4,6 +4,16 @@ module.exports = grunt => {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     return {
+        public: {
+            files: [
+                {
+                    expand: true,
+                    cwd: './public/',
+                    src: ['json/**/*.json'],
+                    dest: './src/'
+                }
+            ]
+        },
         setup: {
             files: [
                 {
@@ -12,7 +22,7 @@ module.exports = grunt => {
                     src: [
                         'index.html',
                         'img/**/*',
-                        'json/**/*.txt',
+                        'json/**/*.json',
                         'manifest.json'
                     ],
                     dest: './public/'
