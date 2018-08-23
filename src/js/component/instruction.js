@@ -27,7 +27,7 @@ class Instruction extends React.Component {
         return (
             <aside className="aside instruction">
                 <h2
-                    className="aside__title collapse__parent"
+                    className="aside__title parent_icon"
                     onClick={this.handleClick}
                 >
                     <CollapseIcon open={this.state.open} direction="down" />

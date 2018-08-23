@@ -9,7 +9,7 @@ import {
     IoIosArrowDropupCircle,
     IoIosArrowDropup
 } from 'react-icons/io';
-import '../../scss/component/collapseicon.scss';
+import '../../scss/component/global/icon.scss';
 
 class CollapseIcon extends React.Component {
     constructor(props) {
@@ -65,7 +65,7 @@ class CollapseIcon extends React.Component {
             icon = this.props.open ? this.collapseRight() : this.collapseLeft();
         }
 
-        return <span className="collapse_icon">{icon}</span>;
+        return <span className="icon">{icon}</span>;
     }
 }
 

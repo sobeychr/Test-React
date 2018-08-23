@@ -1,0 +1,31 @@
+:not(.parent_icon) > .icon {
+    cursor: pointer;
+
+    &:not(:hover) {
+        .hover {
+            display: none;
+        }
+    }
+
+    &:hover {
+        .out {
+            display: none;
+        }
+    }
+}
+
+.parent_icon {
+    cursor: pointer;
+
+    &:not(:hover) > .icon {
+        .hover {
+            display: none;
+        }
+    }
+
+    &:hover > .icon {
+        .out {
+            display: none;
+        }
+    }
+}
