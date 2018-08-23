@@ -22,6 +22,7 @@ h1,
 h2,
 h3,
 h4,
+form,
 li,
 p,
 pre {
@@ -49,10 +50,19 @@ textarea {
         outline-color: $colorLink;
     }
 
-    &::-webkit-input-placeholder,
-    &::-moz-placeholder,
-    &::-ms-input-placeholder,
+    &::-webkit-input-placeholder {
+        color: $colorText2;
+        font-style: italic;
+    }
     &::-moz-placeholder {
+        color: $colorText2;
+        font-style: italic;
+    }
+    &::-ms-input-placeholder {
+        color: $colorText2;
+        font-style: italic;
+    }
+    &:-moz-placeholder {
         color: $colorText2;
         font-style: italic;
     }

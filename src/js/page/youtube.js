@@ -9,9 +9,15 @@ class Youtube extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleForm = this.handleForm.bind(this);
 
         this.state = {
+            band: '',
+            name: '',
+            video: '',
+
             isLoading: false,
             open: true,
             videos: []
@@ -32,9 +38,33 @@ class Youtube extends React.Component {
             });
     }
 
+    handleChange(event) {
+        const target = event.target;
+        let obj = {};
+        obj[target.id] = target.value;
+        this.setState(obj);
+    }
+
     handleClick() {
         const newOpen = !this.state.open;
         this.setState({ open: newOpen });
+    }
+
+    handleForm(event) {
+        event.preventDefault();
+
+        let newVideos = this.state.videos;
+        newVideos.push({
+            band: this.state.band,
+            name: this.state.name,
+            video: this.state.video
+        });
+        this.setState({
+            band: '',
+            name: '',
+            video: '',
+            videos: newVideos
+        });
     }
 
     sortVideos(a, b) {
@@ -45,7 +75,7 @@ class Youtube extends React.Component {
     }
 
     render() {
-        let classDisplay = 'list__content section';
+        let classDisplay = 'section';
         if (!this.state.open) {
             classDisplay += ' section--close';
         }
@@ -62,11 +92,47 @@ class Youtube extends React.Component {
                         <CollapseIcon open={this.state.open} direction="down" />
                         Edit entries
                     </h2>
-                    <ul className={classDisplay}>
-                        {this.state.videos.map((entry, i) => (
-                            <YoutubeEntry key={i} {...entry} />
-                        ))}
-                    </ul>
+                    <section className={classDisplay}>
+                        <ul className="youtube_list">
+                            {this.state.videos.map((entry, i) => (
+                                <YoutubeEntry key={i} {...entry} />
+                            ))}
+                        </ul>
+
+                        <form
+                            className="youtube_form"
+                            onSubmit={this.handleForm}
+                        >
+                            <input
+                                type="text"
+                                id="band"
+                                className="youtube_form__input"
+                                placeholder="Band"
+                                value={this.state.band}
+                                onChange={this.handleChange}
+                            />
+                            <input
+                                type="text"
+                                id="name"
+                                className="youtube_form__input"
+                                placeholder="Name"
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                            />
+                            <input
+                                type="text"
+                                id="video"
+                                className="youtube_form__input"
+                                placeholder="Video ID"
+                                value={this.state.video}
+                                onChange={this.handleChange}
+                            />
+                            <button
+                                type="submit"
+                                className="youtube_form__submit"
+                            />
+                        </form>
+                    </section>
                 </aside>
 
                 <main className="main clearfix">
