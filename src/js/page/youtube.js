@@ -36,8 +36,10 @@ class Youtube extends React.Component {
             })
             .then(json => {
                 json.sort(this.sortVideos);
-                this.setState({ videos: json });
-                this.setState({ isLoading: false });
+                this.setState({
+                    isLoading: false,
+                    videos: json
+                });
             });
     }
 
