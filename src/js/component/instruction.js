@@ -6,14 +6,14 @@ class Instruction extends React.Component {
     constructor(props) {
         super(props);
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleCollapse = this.handleCollapse.bind(this);
 
         this.state = {
             open: true
         };
     }
 
-    handleClick() {
+    handleCollapse() {
         const newOpen = !this.state.open;
         this.setState({ open: newOpen });
     }
@@ -28,7 +28,7 @@ class Instruction extends React.Component {
             <aside className="aside instruction">
                 <h2
                     className="aside__title parent_icon"
-                    onClick={this.handleClick}
+                    onClick={this.handleCollapse}
                 >
                     <CollapseIcon open={this.state.open} direction="down" />
                     Instructions

@@ -1,5 +1,7 @@
 import React from 'react';
 import CollapseIcon from './../component/collapseicon';
+import { FaSave } from 'react-icons/fa';
+import { FiSave } from 'react-icons/fi';
 import Header from './../component/global/header';
 import YoutubeEntry from './../component/youtubeentry';
 import YoutubeLink from './../component/youtubelink';
@@ -10,8 +12,9 @@ class Youtube extends React.Component {
         super(props);
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleCollapse = this.handleCollapse.bind(this);
         this.handleForm = this.handleForm.bind(this);
+        this.handleSave = this.handleSave.bind(this);
 
         this.state = {
             band: '',
@@ -45,7 +48,7 @@ class Youtube extends React.Component {
         this.setState(obj);
     }
 
-    handleClick() {
+    handleCollapse() {
         const newOpen = !this.state.open;
         this.setState({ open: newOpen });
     }
@@ -65,6 +68,10 @@ class Youtube extends React.Component {
             video: '',
             videos: newVideos
         });
+    }
+
+    handleSave() {
+        console.log('saved');
     }
 
     sortVideos(a, b) {
@@ -87,7 +94,7 @@ class Youtube extends React.Component {
                 <aside className="aside">
                     <h2
                         className="aside__title parent_icon"
-                        onClick={this.handleClick}
+                        onClick={this.handleCollapse}
                     >
                         <CollapseIcon open={this.state.open} direction="down" />
                         Edit entries
@@ -131,6 +138,15 @@ class Youtube extends React.Component {
                                 type="submit"
                                 className="youtube_form__submit"
                             />
+                            <button
+                                type="button"
+                                className="youtube_form__button icon"
+                                title="save"
+                                onClick={this.handleSave}
+                            >
+                                <FiSave className="out" />
+                                <FaSave className="hover" />
+                            </button>
                         </form>
                     </section>
                 </aside>
