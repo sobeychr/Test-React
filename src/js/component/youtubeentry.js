@@ -8,8 +8,9 @@ const YoutubeEntry = ({ band, name, video }) => (
             <IoIosCloseCircleOutline className="out" />
             <IoIosCloseCircle className="hover" />
         </i>
-
-        {band + ' ' + name + ' ' + video}
+        <span className="youtube_entry__band">{band}</span>
+        <span className="youtube_entry__name">{name}</span>
+        <span className="youtube_entry__video">{video}</span>
     </li>
 );
 

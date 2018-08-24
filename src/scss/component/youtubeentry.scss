@@ -15,4 +15,20 @@
     &:hover {
         background: $colorBg2;
     }
+
+    &__band {
+        color: $colorLink;
+    }
+
+    &__name {
+        margin-left: 10px;
+    }
+
+    &__video {
+        color: $colorText5;
+        display: block;
+        font-style: italic;
+        margin-top: 5px;
+        text-indent: 20px;
+    }
 }
