@@ -1,6 +1,6 @@
 import React from 'react';
 import CollapseIcon from './../component/collapseicon';
-import { FaSave } from 'react-icons/fa';
+import { FaSave, FaSync } from 'react-icons/fa';
 import { FiSave } from 'react-icons/fi';
 import Header from './../component/global/header';
 import YoutubeEntry from './../component/youtubeentry';
@@ -22,6 +22,7 @@ class Youtube extends React.Component {
             video: '',
 
             isLoading: false,
+            isSaving: false,
             open: true,
             videos: []
         };
@@ -31,9 +32,7 @@ class Youtube extends React.Component {
         this.setState({ isLoading: true });
 
         fetch('./json/youtube.json')
-            .then(response => {
-                return response.json();
-            })
+            .then(response => response.json())
             .then(json => {
                 json.sort(this.sortVideos);
                 this.setState({
@@ -73,7 +72,33 @@ class Youtube extends React.Component {
     }
 
     handleSave() {
-        console.log('saved');
+        this.setState({ isSaving: true });
+
+        fetch('./ajax/youtube.php').then(
+            response => {
+                this.setState({ isSaving: false });
+                console.log('done', response);
+            },
+
+            error => {
+                this.setState({ isSaving: false });
+                console.log('error', error);
+            }
+        );
+        /*
+            .then(response => response.json())
+            .then(
+                (json) => {
+                    this.setState({ isSaving: false });
+                    console.log('done', json);
+                },
+                
+                (error) => {
+                    this.setState({ isSaving: false });
+                    console.log('error', error);
+                }
+            );
+        */
     }
 
     sortVideos(a, b) {
@@ -140,15 +165,19 @@ class Youtube extends React.Component {
                                 type="submit"
                                 className="youtube_form__submit"
                             />
-                            <button
-                                type="button"
-                                className="youtube_form__button icon"
-                                title="save"
-                                onClick={this.handleSave}
-                            >
-                                <FiSave className="out" />
-                                <FaSave className="hover" />
-                            </button>
+                            {this.state.isSaving ? (
+                                <FaSync />
+                            ) : (
+                                <button
+                                    type="button"
+                                    className="youtube_form__button icon"
+                                    title="save"
+                                    onClick={this.handleSave}
+                                >
+                                    <FiSave className="out" />
+                                    <FaSave className="hover" />
+                                </button>
+                            )}
                         </form>
                     </section>
                 </aside>
