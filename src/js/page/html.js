@@ -2,10 +2,6 @@ import React from 'react';
 import Header from './../component/global/header';
 
 class Html extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

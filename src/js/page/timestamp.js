@@ -3,10 +3,6 @@ import Header from './../component/global/header';
 import '../../scss/page/timestamp.scss';
 
 class Timestamp extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>

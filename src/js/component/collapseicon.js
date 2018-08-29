@@ -12,10 +12,6 @@ import {
 import '../../scss/component/global/icon.scss';
 
 class CollapseIcon extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     collapseDown() {
         return (
             <i>

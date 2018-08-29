@@ -45,12 +45,12 @@ class CCssSort {
         this.value = '';
 
         if (this.linecut.indexOf(':') >= 0) {
-            this.property = /^[^\:\ ]+/.exec(this.linecut)[0];
+            this.property = /^[^: ]+/.exec(this.linecut)[0];
             this.propertyAlt = this.property;
-            this.value = /[^\:]+$/.exec(this.linecut)[0];
+            this.value = /[^:]+$/.exec(this.linecut)[0];
 
             if (this.property.indexOf('-') >= 0) {
-                this.propertyAlt = /^[^\-]+/.exec(this.property)[0];
+                this.propertyAlt = /^[^-]+/.exec(this.property)[0];
             }
 
             var newIndex = CCssSort.order.indexOf(this.property);
