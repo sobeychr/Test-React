@@ -74,7 +74,15 @@ class Youtube extends React.Component {
     handleSave() {
         this.setState({ isSaving: true });
 
-        fetch('./ajax/youtube.php')
+        let post = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'text/plain'
+            },
+            body: JSON.stringify(this.state.videos)
+        };
+
+        fetch('//test-react.vm:3300/test', post)
             .then(response => response.text())
             .then(
                 response => {
@@ -87,20 +95,6 @@ class Youtube extends React.Component {
                     console.log('error', error);
                 }
             );
-        /*
-            .then(response => response.json())
-            .then(
-                (json) => {
-                    this.setState({ isSaving: false });
-                    console.log('done', json);
-                },
-                
-                (error) => {
-                    this.setState({ isSaving: false });
-                    console.log('error', error);
-                }
-            );
-        */
     }
 
     sortVideos(a, b) {

@@ -10,7 +10,7 @@ module.exports = grunt => {
                     expand: true,
                     cwd: './src/',
                     src: [
-                        'ajax/**/*.php',
+                        'ajax/**/*',
                         'index.html',
                         'img/**/*',
                         'json/**/*.json',

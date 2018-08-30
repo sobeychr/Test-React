@@ -52,8 +52,9 @@
         "precommit": "lint-staged",
         "prestart": "grunt",
         "start": "node scripts/start.js",
-        "poststart": "php -S test-react.vm:800 -t public/ajax/",
         "build": "node scripts/build.js",
+        "php": "php -S test-react.vm:3300 -t public/ajax/",
+        "phpdev": "php -S test-react.vm:3300 -t src/ajax/",
         "test": "node scripts/test.js --env=jsdom"
     },
     "lint-staged": {
