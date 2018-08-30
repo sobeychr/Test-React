@@ -82,14 +82,13 @@ class Youtube extends React.Component {
             body: JSON.stringify(this.state.videos)
         };
 
-        fetch('//test-react.vm:3300/test', post)
+        fetch('//test-react.vm:3300/youtube', post)
             .then(response => response.text())
             .then(
                 response => {
                     this.setState({ isSaving: false });
                     console.log('done', response);
                 },
-
                 error => {
                     this.setState({ isSaving: false });
                     console.log('error', error);

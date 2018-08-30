@@ -9,8 +9,13 @@ if(!defined('PATH_ROOT')) define('PATH_ROOT', './../');
 if(!defined('PATH_PHP')) define('PATH_PHP', PATH_ROOT . 'php/');
 require_once PATH_PHP . 'includes.php';
 
+
+
 $response = array(
-    'text' => 'Test Ajax successful'
+    'text' => 'Test Ajax successful',
+    'get' => $_GET,
+    'post' => $_POST,
+    'server' => $_SERVER,
 );
 echo json_encode($response);
 die();
