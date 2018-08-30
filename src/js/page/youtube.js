@@ -74,17 +74,19 @@ class Youtube extends React.Component {
     handleSave() {
         this.setState({ isSaving: true });
 
-        fetch('./ajax/youtube.php').then(
-            response => {
-                this.setState({ isSaving: false });
-                console.log('done', response);
-            },
+        fetch('./ajax/youtube.php')
+            .then(response => response.text())
+            .then(
+                response => {
+                    this.setState({ isSaving: false });
+                    console.log('done', response);
+                },
 
-            error => {
-                this.setState({ isSaving: false });
-                console.log('error', error);
-            }
-        );
+                error => {
+                    this.setState({ isSaving: false });
+                    console.log('error', error);
+                }
+            );
         /*
             .then(response => response.json())
             .then(
