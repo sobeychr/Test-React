@@ -1,6 +1,8 @@
 @import '../variable';
 
-.youtube_form {
+$youtubeUrlWidth: 350px;
+
+.youtube_add {
     margin-top: 15px;
 
     &__button {
@@ -15,6 +17,21 @@
         display: block;
         margin-bottom: 5px;
         width: calc(100% - 13px);
+    }
+
+    &__submit {
+        display: none;
+    }
+}
+
+.youtube_url {
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 175px);
+
+    &__input {
+        display: block;
+        width: $youtubeUrlWidth;
     }
 
     &__submit {
