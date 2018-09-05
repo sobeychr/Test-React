@@ -24,9 +24,14 @@ $youtubeUrlWidth: 350px;
     }
 }
 
+.youtube_list {
+    list-style: none;
+    margin: 10px 10px 0 10px;
+}
+
 .youtube_url {
     position: absolute;
-    top: 100px;
+    top: 60px;
     left: calc(50% - 175px);
 
     &__input {
@@ -37,9 +42,4 @@ $youtubeUrlWidth: 350px;
     &__submit {
         display: none;
     }
-}
-
-.youtube_list {
-    list-style: none;
-    margin: 10px 10px 0 10px;
 }

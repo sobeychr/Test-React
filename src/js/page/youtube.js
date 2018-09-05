@@ -52,6 +52,9 @@ class Youtube extends React.Component {
             name: this.state.name,
             video: this.state.video
         });
+
+        newVideos = newVideos.sort(this.sortVideos);
+
         this.setState({
             band: '',
             name: '',
@@ -112,16 +115,23 @@ class Youtube extends React.Component {
         };
 
         fetch('//test-react.vm:3300/youtube', post)
-            .then(response => response.json())
+            .then(response => response.text())
             .then(
                 response => {
-                    this.setState({
-                        isLoading: false,
-                        band: response.band,
-                        name: response.name,
-                        video: response.video
-                    });
+                    this.setState({ isLoading: false });
                     console.log('URL - done', response);
+
+                    var json = false;
+                    try {
+                        json = JSON.parse(response);
+                        this.setState({
+                            band: json.band,
+                            name: json.name,
+                            video: json.video
+                        });
+                    } catch (e) {
+                        console.log('URL - done - err', json);
+                    }
                 },
                 error => {
                     this.setState({ isLoading: false });
@@ -132,9 +142,9 @@ class Youtube extends React.Component {
 
     sortVideos(a, b) {
         if (a.band === b.band) {
-            return a.name > b.name;
+            return a.name > b.name ? 1 : -1;
         }
-        return a.band > b.band;
+        return a.band > b.band ? 1 : -1;
     }
 
     render() {
@@ -156,12 +166,6 @@ class Youtube extends React.Component {
                         Edit entries
                     </h2>
                     <section className={classDisplay}>
-                        <ul className="youtube_list">
-                            {this.state.videos.map((entry, i) => (
-                                <YoutubeEntry key={i} {...entry} />
-                            ))}
-                        </ul>
-
                         <form className="youtube_add" onSubmit={this.handleAdd}>
                             <input
                                 type="text"
@@ -205,6 +209,12 @@ class Youtube extends React.Component {
                                 </button>
                             )}
                         </form>
+
+                        <ul className="youtube_list">
+                            {this.state.videos.map((entry, i) => (
+                                <YoutubeEntry key={i} {...entry} />
+                            ))}
+                        </ul>
                     </section>
                 </aside>
 

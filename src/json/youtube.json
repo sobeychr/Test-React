@@ -1,5 +1,130 @@
 [
     {
+        "band": "Alice in Chains",
+        "name": "Frogs",
+        "video": "izy0zA3kQTc"
+    },
+    {
+        "band": "Amon Amarth",
+        "name": "Blood Eagle",
+        "video": "DhhLPEVLcLk"
+    },
+    {
+        "band": "Avengers",
+        "name": "End Credits",
+        "video": "6-7rU7f4FP4"
+    },
+    {
+        "band": "Birthday Massacre",
+        "name": "Red Stars",
+        "video": "GDxYFzxAkWg"
+    },
+    {
+        "band": "Blade Runner",
+        "name": "Vangelis",
+        "video": "RScZrvTebeA"
+    },
+    {
+        "band": "Blizzard",
+        "name": "Diablo 1",
+        "video": "vcTAVQYMZv0"
+    },
+    {
+        "band": "Blizzard",
+        "name": "Diablo 3 Leoric",
+        "video": "Fj_Do7v9xG8"
+    },
+    {
+        "band": "Blizzard",
+        "name": "Warcraft 1",
+        "video": "ZxXsbbs0teI"
+    },
+    {
+        "band": "Calum Scott",
+        "name": "Dancing On My Own",
+        "video": "z7BgY_wTNZA"
+    },
+    {
+        "band": "Doctor Who",
+        "name": "Doomsday Theme",
+        "video": "Am7eHyJ8_1Y"
+    },
+    {
+        "band": "Eivor",
+        "name": "I Know",
+        "video": "mXkBXpO79us"
+    },
+    {
+        "band": "Fractured Light Music",
+        "name": "These Final Words",
+        "video": "-vsWB9V4np4"
+    },
+    {
+        "band": "Handel Messiah",
+        "name": "Hallelujah Chorus",
+        "video": "usfiAsWR4qU"
+    },
+    {
+        "band": "Katatonia",
+        "name": "Evidence",
+        "video": "GeazTAn3U04"
+    },
+    {
+        "band": "Katatonia",
+        "name": "In The White",
+        "video": "0mdlVHC7dSY"
+    },
+    {
+        "band": "Leif Vollebekk",
+        "name": "Elegy",
+        "video": "AoW-6LJxA70"
+    },
+    {
+        "band": "Oasis",
+        "name": "Stop Crying Your Heart Out",
+        "video": "dhZUsNJ-LQU"
+    },
+    {
+        "band": "Our Lady Piece",
+        "name": "Is Anybody Home",
+        "video": "advtohP6Zrc"
+    },
+    {
+        "band": "Perkins",
+        "name": "Casino",
+        "video": "ZDFqFz2iLF8"
+    },
+    {
+        "band": "R. Armando Morabito",
+        "name": "Sea of Atlas",
+        "video": "iqAiWNzNIms"
+    },
+    {
+        "band": "Rob Dougan",
+        "name": "Born Yesterday",
+        "video": "Zs4tjbqyVaM"
+    },
+    {
+        "band": "Samurai Jack",
+        "name": "Lone Wolves",
+        "video": "NYtqqYhTtSQ"
+    },
+    {
+        "band": "Sleeping Beauty",
+        "name": "Aurora's Return/Maleficent's Evil Spell",
+        "video": "_w2SqTg-R2Q"
+    },
+    {
+        "band": "Sons of Butcher",
+        "name": "Fuck the Shit",
+        "video": "JqqgmO8VNyU"
+    },
+    {
+        "band": "Star Wars",
+        "name": "Ancient Sith Theme",
+        "video": "SUs4foG53fg"
+    },
+    {
         "band": "Viking",
         "name": "Dagr",
         "video": "FsSd-1AE4QY"
@@ -10,23 +135,23 @@
         "video": "DD65K4VR6Lw"
     },
     {
-        "band": "The Birthday Massacre",
-        "name": "Red Stars",
-        "video": "GDxYFzxAkWg"
+        "band": "Viking",
+        "name": "Loeyndomsriss / Heimta Thurs / Thurs",
+        "video": "wUSEQEOgkGw"
     },
     {
-        "band": "Calum Scott",
-        "name": "Dancing On My Own",
-        "video": "z7BgY_wTNZA"
+        "band": "Viking",
+        "name": "Snake Pit Poetry",
+        "video": "d-KmqG_beNY"
     },
     {
-        "band": "VIking",
+        "band": "Viking",
         "name": "Valhalla Awaits",
         "video": "ICBPdayzeIc"
     },
     {
-        "band": "Eivor",
-        "name": "I Know",
-        "video": "mXkBXpO79us"
+        "band": "Within Temptation",
+        "name": "Memories",
+        "video": "bhzJO34SCoc"
     }
 ]

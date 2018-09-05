@@ -5,24 +5,17 @@
     border: 1px solid $colorSubtitle;
     display: block;
     float: left;
-    margin-right: 1%;
+    margin: 1% 1% 0 0;
     padding: 5px;
-    width: 12.15%;
+    width: 12%;
     min-width: 100px;
     max-width: 150px;
-
-    &:nth-child(n + 8) {
-        margin-top: 1%;
-    }
-
-    &:nth-child(7n) {
-        margin-right: 0;
-    }
 
     &__band {
         color: $colorLink;
         display: block;
         font-weight: bold;
+        height: 28px;
         margin-bottom: 8px;
         text-align: center;
     }
@@ -35,6 +28,7 @@
 
     &__name {
         display: block;
+        height: 42px;
         margin-bottom: 5px;
         text-align: center;
     }
