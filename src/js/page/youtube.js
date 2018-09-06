@@ -15,6 +15,7 @@ class Youtube extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleCollapse = this.handleCollapse.bind(this);
         this.handleSave = this.handleSave.bind(this);
+        this.handleSlide = this.handleSlide.bind(this);
         this.handleUrl = this.handleUrl.bind(this);
 
         this.state = {
@@ -23,8 +24,9 @@ class Youtube extends React.Component {
             video: '',
             url: '',
 
+            asideOpen: true,
+            slideOpen: true,
             isLoading: false,
-            open: true,
             videos: []
         };
     }
@@ -71,8 +73,8 @@ class Youtube extends React.Component {
     }
 
     handleCollapse() {
-        const newOpen = !this.state.open;
-        this.setState({ open: newOpen });
+        const newOpen = !this.state.asideOpen;
+        this.setState({ asideOpen: newOpen });
     }
 
     handleSave() {
@@ -101,6 +103,11 @@ class Youtube extends React.Component {
                     console.log('SAVE - error', error);
                 }
             );
+    }
+
+    handleSlide() {
+        const newOpen = !this.state.slideOpen;
+        this.setState({ slideOpen: newOpen });
     }
 
     handleUrl(event) {
@@ -148,9 +155,14 @@ class Youtube extends React.Component {
     }
 
     render() {
-        let classDisplay = 'section';
-        if (!this.state.open) {
-            classDisplay += ' section--close';
+        let asideClass = 'section',
+            videoClass = 'youtube_video';
+
+        if (!this.state.asideOpen) {
+            asideClass += ' section--close';
+        }
+        if (!this.state.slideOpen) {
+            videoClass += ' youtube_video--close';
         }
 
         return (
@@ -162,10 +174,13 @@ class Youtube extends React.Component {
                         className="aside__title parent_icon"
                         onClick={this.handleCollapse}
                     >
-                        <CollapseIcon open={this.state.open} direction="down" />
+                        <CollapseIcon
+                            open={this.state.asideOpen}
+                            direction="down"
+                        />
                         Edit entries
                     </h2>
-                    <section className={classDisplay}>
+                    <section className={asideClass}>
                         <form className="youtube_add" onSubmit={this.handleAdd}>
                             <input
                                 type="text"
@@ -216,6 +231,14 @@ class Youtube extends React.Component {
                             ))}
                         </ul>
                     </section>
+                </aside>
+
+                <aside className={videoClass}>
+                    <button
+                        className="youtube_video__button"
+                        onClick={this.handleSlide}
+                    />
+                    <div className="youtube_video__div" />
                 </aside>
 
                 <main className="main clearfix">

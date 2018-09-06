@@ -43,3 +43,50 @@ $youtubeUrlWidth: 350px;
         display: none;
     }
 }
+
+.youtube_video {
+    position: fixed;
+    top: 60px;
+    background: $colorBg0;
+
+    height: 250px;
+    width: 350px;
+    transition: left 0.2s linear, right 0.2s linear;
+
+    &--close {
+        right: -330px;
+    }
+
+    &:not(&--close) {
+        @media (max-width: 1200px) {
+            left: 90%;
+        }
+        @media (min-width: 1201px) and (max-width: 1600px) {
+            left: 85%;
+        }
+        @media (min-width: 1601px) {
+            right: 0;
+        }
+    }
+
+    &__button {
+        background: $colorLink;
+        border: none;
+        display: block;
+        float: left;
+        height: 100%;
+        width: 10px;
+
+        &:hover {
+            background: $colorLinkHover;
+        }
+    }
+
+    &__div {
+        background: rgba(200, 0, 0, 0.5);
+        float: left;
+        margin: 10px;
+        height: calc(100% - 20px);
+        width: calc(100% - 32px);
+    }
+}
