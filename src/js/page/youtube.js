@@ -20,6 +20,8 @@ class PageYoutube extends React.Component {
         this.handleSlide = this.handleSlide.bind(this);
         this.handleUrl = this.handleUrl.bind(this);
 
+        this.youtubeVideo = React.createRef();
+
         this.state = {
             band: '',
             name: '',
@@ -116,9 +118,13 @@ class PageYoutube extends React.Component {
             );
     }
 
-    handleSelect(event) {
-        const ctarget = event.currentTarget;
-        console.log('handleSelect - ct', ctarget);
+    handleSelect(video) {
+        this.setState({ player: video });
+
+        const player = this.youtubeVideo.current.internalPlayer;
+        setTimeout(() => {
+            player.playVideo();
+        }, 250);
     }
 
     handleSlide() {
@@ -257,6 +263,7 @@ class PageYoutube extends React.Component {
 
                     <YouTube
                         className="youtube_video__player"
+                        ref={this.youtubeVideo}
                         videoId={this.state.player}
                         opts={this.state.playerOpt}
                         onEnd={this.handleEnd}
