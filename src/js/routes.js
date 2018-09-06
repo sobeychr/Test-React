@@ -6,7 +6,7 @@ import Css from './page/css';
 import Html from './page/html';
 import Page404 from './page/page404';
 import Timestamp from './page/timestamp';
-import Youtube from './page/youtube';
+import PageYoutube from './page/youtube';
 
 const Routes = () => (
     <Router>
@@ -15,7 +15,7 @@ const Routes = () => (
             <Route path="/css" component={Css} />
             <Route path="/html" component={Html} />
             <Route path="/timestamp" component={Timestamp} />
-            <Route path="/youtube" component={Youtube} />
+            <Route path="/youtube" component={PageYoutube} />
             <Route component={Page404} />
         </Switch>
     </Router>

@@ -1,4 +1,5 @@
 import React from 'react';
+import YouTube from 'react-youtube';
 import CollapseIcon from './../component/collapseicon';
 import { FaSave, FaSync } from 'react-icons/fa';
 import { FiSave } from 'react-icons/fi';
@@ -7,7 +8,7 @@ import YoutubeEntry from './../component/youtubeentry';
 import YoutubeLink from './../component/youtubelink';
 import '../../scss/page/youtube.scss';
 
-class Youtube extends React.Component {
+class PageYoutube extends React.Component {
     constructor(props) {
         super(props);
 
@@ -15,6 +16,7 @@ class Youtube extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleCollapse = this.handleCollapse.bind(this);
         this.handleSave = this.handleSave.bind(this);
+        this.handleSelect = this.handleSelect.bind(this);
         this.handleSlide = this.handleSlide.bind(this);
         this.handleUrl = this.handleUrl.bind(this);
 
@@ -23,6 +25,11 @@ class Youtube extends React.Component {
             name: '',
             video: '',
             url: '',
+
+            player: '',
+            playerOpt: {
+                autoplay: 1
+            },
 
             asideOpen: true,
             slideOpen: true,
@@ -77,6 +84,10 @@ class Youtube extends React.Component {
         this.setState({ asideOpen: newOpen });
     }
 
+    handleEnd(event) {
+        event.target.playVideo();
+    }
+
     handleSave() {
         this.setState({ isLoading: true });
 
@@ -103,6 +114,11 @@ class Youtube extends React.Component {
                     console.log('SAVE - error', error);
                 }
             );
+    }
+
+    handleSelect(event) {
+        const ctarget = event.currentTarget;
+        console.log('handleSelect - ct', ctarget);
     }
 
     handleSlide() {
@@ -238,7 +254,13 @@ class Youtube extends React.Component {
                         className="youtube_video__button"
                         onClick={this.handleSlide}
                     />
-                    <div className="youtube_video__div" />
+
+                    <YouTube
+                        className="youtube_video__player"
+                        videoId={this.state.player}
+                        opts={this.state.playerOpt}
+                        onEnd={this.handleEnd}
+                    />
                 </aside>
 
                 <main className="main clearfix">
@@ -255,7 +277,11 @@ class Youtube extends React.Component {
                     </form>
 
                     {this.state.videos.map((entry, i) => (
-                        <YoutubeLink key={i} {...entry} />
+                        <YoutubeLink
+                            key={i}
+                            {...entry}
+                            onClick={this.handleSelect}
+                        />
                     ))}
                 </main>
             </div>
@@ -263,4 +289,4 @@ class Youtube extends React.Component {
     }
 }
 
-export default Youtube;
+export default PageYoutube;

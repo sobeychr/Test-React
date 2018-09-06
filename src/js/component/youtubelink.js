@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../scss/component/youtubelink.scss';
 
-const YoutubeLink = ({ band, name, video }) => (
-    <div className="youtube_link">
+const YoutubeLink = ({ band, name, video, onClick }) => (
+    <div className="youtube_link" onClick={onClick}>
         <span className="youtube_link__band">{band}</span>
         <span className="youtube_link__name">{name}</span>
         <img

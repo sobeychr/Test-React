@@ -82,11 +82,9 @@ $youtubeUrlWidth: 350px;
         }
     }
 
-    &__div {
-        background: rgba(200, 0, 0, 0.5);
-        float: left;
-        margin: 10px;
-        height: calc(100% - 20px);
-        width: calc(100% - 32px);
+    &__player {
+        margin-left: 10px;
+        height: 100%;
+        width: calc(100% - 22px);
     }
 }
