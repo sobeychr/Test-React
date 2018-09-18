@@ -101,15 +101,19 @@ class PageYoutube extends React.Component {
             body: data
         };
 
-        fetch('//test-react.vm:3300/youtube', post)
+        fetch('//localhost:3300/youtube', post)
             .then(response => response.text())
             .then(
                 response => {
-                    this.setState({
-                        isLoading: false,
-                        videos: response
-                    });
+                    this.setState({ isLoading: false });
                     console.log('SAVE - done', response);
+                    var json = false;
+                    try {
+                        json = JSON.parse(response);
+                        this.setState({ videos: json });
+                    } catch (e) {
+                        console.log('SAVE - done - err', json);
+                    }
                 },
                 error => {
                     this.setState({ isLoading: false });
@@ -143,7 +147,7 @@ class PageYoutube extends React.Component {
             body: data
         };
 
-        fetch('//test-react.vm:3300/youtube', post)
+        fetch('//localhost:3300/youtube', post)
             .then(response => response.text())
             .then(
                 response => {

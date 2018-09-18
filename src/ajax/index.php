@@ -12,13 +12,13 @@ $page = substr($page, 1) . '.php';
 if(file_exists($page)) {
     
     $protocol = 'http';
-    if($_SERVER['HTTPS']) {
+    if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']) {
         $protocol .= 's';
     }
     
     $headers = array(
         'Access-Control-Allow-Methods' => 'POST, GET',
-        'Access-Control-Allow-Origin' => $protocol . '://test-react.vm:3000',
+        'Access-Control-Allow-Origin' => $protocol . '://localhost:3000',
         'Content-Type' => 'text/plain; charset=UTF-8',
     );
     foreach($headers as $key=>$value) {
