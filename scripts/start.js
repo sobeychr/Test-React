@@ -95,6 +95,8 @@ choosePort(HOST, DEFAULT_PORT)
                 clearConsole();
             }
             console.log(chalk.cyan('Starting the development server...\n'));
+            console.log("Don't forget to run");
+            console.log('> ' + chalk.cyan('npm run php'));
             openBrowser(urls.localUrlForBrowser);
         });
 
