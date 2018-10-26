@@ -1,6 +1,6 @@
 import React from 'react';
 import { IoIosCloseCircleOutline, IoIosCloseCircle } from 'react-icons/io';
-import '../../scss/component/youtubeentry.scss';
+import './../../../scss/page/youtube/youtubeentry.scss';
 
 const YoutubeEntry = ({ band, name, video }) => (
     <li className="youtube_entry">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './../component/global/header';
+import '../../scss/component/global/aside.scss';
 
 class Html extends React.Component {
     render() {

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './../component/global/header';
 import Instruction from './../component/instruction';
 import { CCssSort, sortCss } from '../script/css';
+import '../../scss/component/global/aside.scss';
 import '../../scss/page/css.scss';
 
 class Css extends React.Component {

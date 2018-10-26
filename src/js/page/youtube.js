@@ -4,8 +4,9 @@ import CollapseIcon from './../component/collapseicon';
 import { FaSave, FaSync } from 'react-icons/fa';
 import { FiSave } from 'react-icons/fi';
 import Header from './../component/global/header';
-import YoutubeEntry from './../component/youtubeentry';
-import YoutubeLink from './../component/youtubelink';
+import YoutubeEntry from './youtube/youtubeentry';
+import YoutubeLink from './youtube/youtubelink';
+import '../../scss/component/global/aside.scss';
 import '../../scss/page/youtube.scss';
 
 class PageYoutube extends React.Component {

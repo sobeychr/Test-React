@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../scss/component/youtubelink.scss';
+import './../../../scss/page/youtube/youtubelink.scss';
 
 const YoutubeLink = ({ band, name, video, onClick }) => (
     <div
